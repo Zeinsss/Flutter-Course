@@ -10,7 +10,6 @@ bool match(String input) {
   while (i < j) {
     // Left side
     if (leftBracket.contains(input[i])) {
-      
       if (input[i] == '{') {
         temp = '}';
         if (temp == input[j]) {

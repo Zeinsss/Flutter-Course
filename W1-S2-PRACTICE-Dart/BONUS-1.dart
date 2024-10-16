@@ -1,13 +1,13 @@
 enum Direction { north, east, south, west }
 
 class Position {
-    int x = 0;
-    int y = 0;
+    int x;
+    int y;
     Position(this.x, this.y);
   }
 class Robot {
   Position position;
-  Direction direction = Direction.north;
+  Direction direction;
   
   Robot(this.position, this.direction);
 
@@ -88,7 +88,7 @@ void main() {
   Direction direction = Direction.north;
 
   // Example instruction sequence
-  const instructions = "RAALAL";
+  const instructions = "RAALARAALAL";
 
   // Process the instructions and get the final position and direction
   
