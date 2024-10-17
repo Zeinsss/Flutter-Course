@@ -32,7 +32,7 @@ class Distance{
     return switch (this._type) {
       Unit.centimeter => Distance.meters(this._distance * kilometer),
       Unit.meter => Distance.meters(this._distance),
-      Unit.kilometer => Distance.meters(this._distance * centimeter)
+      Unit.kilometer => Distance.meters(this._distance * centimeter * 10)
     };
   }
 
@@ -57,7 +57,7 @@ class Distance{
 
   Distance operator +(covariant Distance p) {
     return Distance(
-      this._distance + p._distance
+      this.meters()._distance + p.meters()._distance
     );
   }
 }
