@@ -1,7 +1,7 @@
 enum Unit{centimeter, meter, kilometer}
 
 // Assuming default distance is meter!
-const double centimeter = meter * 1000 ; // 1000
+const double centimeter = meter * 100 ; // 1000
 const double meter = 1;
 const double kilometer = meter / 1000; // 0.001
 class Distance{
