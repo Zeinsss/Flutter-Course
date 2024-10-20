@@ -36,7 +36,7 @@ class Distance{
     };
   }
 
-  Distance cms() {
+  Distance cms( ) {
     return switch (this._type) {
       Unit.centimeter => Distance.cms(this._distance * centimeter),
       Unit.meter => Distance.cms(this._distance),
@@ -47,9 +47,9 @@ class Distance{
   @override
   String toString() {
     return switch (this._type){
-      Unit.centimeter => "Distance: $_distance cm",
-      Unit.meter => "Distance: $_distance m",
-      Unit.kilometer => "Distance: $_distance km",
+      Unit.centimeter => "Distance: $_distance ${_type.name}",
+      Unit.meter => "Distance: $_distance ${_type.name}",
+      Unit.kilometer => "Distance: $_distance ${_type.name}",
     };
   }
   get distance => _distance;
@@ -60,6 +60,8 @@ class Distance{
       this.meters()._distance + p.meters()._distance
     );
   }
+
+
 }
 main() {
   Distance dist1 = Distance.meters(1000);
@@ -71,4 +73,5 @@ main() {
   print(dist3.kms());
   print(dist3.meters());
   print(dist3.cms());
+  print(dist1+dist2);
 }
