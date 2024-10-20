@@ -24,7 +24,7 @@ class BankAccount {
   
   @override
   String toString() {
-    String result = "\n\t\tAccount Name: $_accountHolderName\n\t\tID: $_id\n\t\tAmount: $_amount\n\t\t"; 
+    String result = "\n\t\tAccount Name: $_accountHolderName\n\t\tID: $_id\n\t\tAmount: $_amount \$\n\t\t"; 
     if (_currency != null) {
       result += "Currency: ${_currency.name}";
     }
