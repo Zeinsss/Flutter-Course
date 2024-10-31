@@ -7,8 +7,7 @@ class GradientButton extends StatelessWidget {
       {super.key,
       required this.text,
       this.beginColor = const Color(0xFF1282ba),
-      this.endColor = const Color(0xFF1282ba)
-      });
+      this.endColor = const Color(0xFF1282ba)});
 
   final String text;
   final Color beginColor;
