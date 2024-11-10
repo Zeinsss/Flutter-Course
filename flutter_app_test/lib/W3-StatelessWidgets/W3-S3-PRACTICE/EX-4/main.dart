@@ -20,7 +20,7 @@ class GradientButton extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          gradient: LinearGradient(colors: <Color>[beginColor, endColor])),
+          gradient: LinearGradient(colors: [beginColor, endColor])),
       child: Center(
         child: Text(
           text,
