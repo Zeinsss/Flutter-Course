@@ -54,5 +54,5 @@ JokeList myjokeList = JokeList([
   joke18,
   joke19,
   joke20
-], joke2
+], null
 );
