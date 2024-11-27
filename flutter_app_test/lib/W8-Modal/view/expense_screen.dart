@@ -30,6 +30,7 @@ class _ExpenseAppState extends State<ExpenseApp> {
           backgroundColor: Colors.blue,
           actions: [
             IconButton(
+              iconSize: 40,
               onPressed: () => {
                 showModalBottomSheet(context: context, builder: (BuildContext context) {
                   return Container(
@@ -83,15 +84,16 @@ class ExpenseCard extends StatelessWidget {
         children: [
           const SizedBox(width: 20,),
           Expanded(
-            flex: 2,
+            flex: 4,
             child: Text(
-              expense.title
+              expense.title,
+              style: const TextStyle(fontSize: 20, color: Colors.white),
               )
             ),
-          const Spacer(flex: 3,),
-          const Icon(Icons.food_bank),
+          const Spacer(flex: 1,),
+          Icon(expense.category.icon, size: 40,),
           const SizedBox(width: 20,),
-          Text(DateFormat('yyyy-MM-dd – kk:mm').format(expense.date)),
+          Text(DateFormat('yyyy-MM-dd – kk:mm').format(expense.date), style: const TextStyle(fontSize: 20, color: Colors.white),),
           const SizedBox(width: 20,),
         ],
       ),

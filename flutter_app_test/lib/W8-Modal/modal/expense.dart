@@ -1,7 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 
 // ignore: constant_identifier_names
-enum ExpenseType{FOOD, TRAVEL, LEISURE, WORK}
+enum ExpenseType{FOOD(Icons.food_bank_outlined), TRAVEL(Icons.hiking_rounded), LEISURE(Icons.airline_seat_recline_extra), WORK(Icons.work);
+  final IconData icon;
+  const ExpenseType(this.icon);
+}
 
 class Expense {
 

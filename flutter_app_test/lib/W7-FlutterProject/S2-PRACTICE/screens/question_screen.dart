@@ -64,9 +64,8 @@ class AnswerCard extends StatelessWidget {
       ),
       child: TextButton(
         onPressed: () {
-          onTap(
-              possibleAnswer); // Correctly invoke the function with the argument
-        },
+          onTap(possibleAnswer); // Correctly invoke the function with the argument
+        },  
         child: Text(
           possibleAnswer,
           style: const TextStyle(fontSize: 30, color: Colors.blue),

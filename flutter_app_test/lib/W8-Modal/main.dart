@@ -6,13 +6,14 @@ import 'package:uuid/uuid.dart';
 void main() {
 
   Expense expense1 = Expense(ExpenseType.FOOD, title: "Food Stuff", amount: 3.14);
-  print(expense1.id);
-  print(expense1.date);
-  Expense expense2 = Expense(ExpenseType.FOOD, title: "Movie", amount: 3.14);
-  print(expense2.id);
-  print(expense2.date);
+  Expense expense2 = Expense(ExpenseType.TRAVEL, title: "Go to Texas", amount: 3.14);
+  Expense expense3 = Expense(ExpenseType.TRAVEL, title: "Go to Texas", amount: 3.14);
+  Expense expense4 = Expense(ExpenseType.TRAVEL, title: "Go to Texas", amount: 3.14);
+  Expense expense5 = Expense(ExpenseType.TRAVEL, title: "Go to Texas", amount: 3.14);
+  Expense expense6 = Expense(ExpenseType.TRAVEL, title: "Go to Texas", amount: 3.14);
+  Expense expense7 = Expense(ExpenseType.TRAVEL, title: "Go to Texas", amount: 3.14);
 
-  List<Expense> expenses = [expense1, expense2];
+  List<Expense> expenses = [expense1, expense2, expense3, expense4, expense5, expense6, expense7];
 
   return runApp(
     MaterialApp(
