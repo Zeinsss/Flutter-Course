@@ -30,9 +30,13 @@ class ResultScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   int num = index + 1;
                   return ResultItem(question: quiz.questions[index], answer: submission.answers[index], number: num.toString(),);
-                }
+                },
               ),
             ),
+            Container(
+              margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+              child: ElevatedButton(onPressed: onTap, child: const Text("Restart")) 
+            )
           ],
         ),
       ),

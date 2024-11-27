@@ -6,6 +6,8 @@ import 'package:flutter_app_test/W7-FlutterProject/S2-PRACTICE/screens/result_sc
 import 'package:flutter_app_test/W7-FlutterProject/S2-PRACTICE/screens/welcome_screen.dart';
 import 'model/quiz.dart';
 
+
+
 /// There are 3 screen states which are NOT_STARTED = welcome_screen, STARTED = question_screen, FINISHED = result_screen
 // ignore: constant_identifier_names
 enum QuizState { NOT_STARTED, STARTED, FINISHED }
@@ -25,8 +27,6 @@ class QuizApp extends StatefulWidget {
 class _QuizAppState extends State<QuizApp> {
   late List<Question> currentQuestions;
 
-  late List<Question> copyQuestions;
-
   late QuizState quizState = QuizState.NOT_STARTED;
 
   late Widget quizScreen = WelcomeScreen(onStartPressed: toQuestionScreen);
@@ -37,7 +37,6 @@ class _QuizAppState extends State<QuizApp> {
   void initState() {
     super.initState();
     currentQuestions = widget.quizzes.questions;
-    copyQuestions = currentQuestions;
   }
 
   void restart() {
@@ -51,8 +50,7 @@ class _QuizAppState extends State<QuizApp> {
   void toQuestionScreen() {
     setState(() {
       quizState = QuizState.STARTED;
-      quizScreen =
-          QuestionScreen(onTap: setAnswer, question: currentQuestions[index]);
+      quizScreen = QuestionScreen(onTap: setAnswer, question: currentQuestions[index]);
     });
   }
 
@@ -73,18 +71,13 @@ class _QuizAppState extends State<QuizApp> {
     setState(() {
       if (index + 1 < currentQuestions.length) {
         index++;
-        quizScreen = QuestionScreen(
-          onTap: setAnswer,
-          question: currentQuestions[index],
-        );
+        quizScreen = QuestionScreen( onTap: setAnswer, question: currentQuestions[index]);
       } else {
-        // Quiz finished
+        /// Quiz finished
+        /// Restart the counter
+        index = 0;
         quizState = QuizState.FINISHED;
-        quizScreen = ResultScreen(
-          onTap: toResultScreen,
-          submission: widget.submissions,
-          quiz: widget.quizzes,
-        );
+        quizScreen = ResultScreen( onTap: toResultScreen, submission: widget.submissions, quiz: widget.quizzes,);
       }
     });
   }
@@ -93,6 +86,7 @@ class _QuizAppState extends State<QuizApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: appColor,
         body: Center(
