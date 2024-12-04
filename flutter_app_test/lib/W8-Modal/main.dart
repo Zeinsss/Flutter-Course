@@ -12,6 +12,7 @@ void main() {
   Expense expense5 = Expense(ExpenseType.TRAVEL, title: "Go to Texas", amount: 3.14);
   Expense expense6 = Expense(ExpenseType.TRAVEL, title: "Go to Texas", amount: 3.14);
   Expense expense7 = Expense(ExpenseType.TRAVEL, title: "Go to Texas", amount: 3.14);
+  
 
   List<Expense> expenses = [expense1, expense2, expense3, expense4, expense5, expense6, expense7];
 

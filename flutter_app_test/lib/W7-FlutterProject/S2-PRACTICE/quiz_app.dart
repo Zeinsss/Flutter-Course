@@ -6,8 +6,6 @@ import 'package:flutter_app_test/W7-FlutterProject/S2-PRACTICE/screens/result_sc
 import 'package:flutter_app_test/W7-FlutterProject/S2-PRACTICE/screens/welcome_screen.dart';
 import 'model/quiz.dart';
 
-
-
 /// There are 3 screen states which are NOT_STARTED = welcome_screen, STARTED = question_screen, FINISHED = result_screen
 // ignore: constant_identifier_names
 enum QuizState { NOT_STARTED, STARTED, FINISHED }
