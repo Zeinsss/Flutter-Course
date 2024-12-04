@@ -8,7 +8,7 @@ class ExpensesList extends StatelessWidget {
 
   final List<Expense> expenses;
 
-  final Function(Expense) onExpenseRemoved;
+  final Function(Expense, int) onExpenseRemoved;
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +17,9 @@ class ExpensesList extends StatelessWidget {
       child: ListView.builder(
         itemCount: expenses.length,
         itemBuilder: (context, index) => Dismissible(
-          onDismissed: (direction) => onExpenseRemoved(expenses[index]),
-            key: Key(expenses[index].id), child: ExpenseItem(expenses[index])),
+            onDismissed: (direction) => onExpenseRemoved(expenses[index], index),
+            key: UniqueKey(),
+            child: ExpenseItem(expenses[index])),
       ),
     );
   }
